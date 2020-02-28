@@ -12,7 +12,7 @@ namespace Demos
         private static void Enviar(List<DestinatarioEmail> destinatarios, string assunto, string texto)
         {
             var message = new MimeMessage();
-            message.From.Add(new MailboxAddress("ONLINE", "emailt@email.com"));
+            message.From.Add(new MailboxAddress("TITULO", "seuemail@email.com"));
             foreach (DestinatarioEmail destinatario in destinatarios)
             {
                 if (EmailValido(destinatario.Email))
@@ -34,7 +34,7 @@ namespace Demos
                 {
                     client.Connect("smtp.gmail.com", 465, true);
                     client.AuthenticationMechanisms.Remove("XOAUTH2");
-                    client.Authenticate("top1soft@email.co,", "senhaaqui");
+                    client.Authenticate("seuemail@email.com", "senhadoemail");
 #if !DEBUG
                     client.Send(message);
 #endif

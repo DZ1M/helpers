@@ -8,15 +8,15 @@ namespace Demos
         public TimeSpan RetornaTempo()
         {
             var stopwatch = new Stopwatch();
-            //Inicia
+            // Inicia
             stopwatch.Start();
-            //Aqui executa o metodo....
+            // Aqui executa o metodo....
 
-            //Metodo....
+            // Coloque um Metodo Aqui....
 
-            //Para o tempo
+            // Para o tempo
             stopwatch.Stop();
-            //Retorna Tempo
+            // Retorna Tempo
             return stopwatch.Elapsed;
         }
     }

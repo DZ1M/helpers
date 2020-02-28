@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
 using System.Text;
@@ -24,7 +23,8 @@ namespace Demos
                 return BitConverter.ToString(md5.ComputeHash(Encoding.UTF8.GetBytes(valor))).Replace("-", "").ToLower();
             }
         }
-        public const string salt = "passwordencryptcomrijindaelprote";
+        // Aqui abaixo em "salt" voce muda pra uma string ou token que desejar, vai evitar que outros decryptem suas senhas, caso tenham acesso.
+        public const string salt = "passwordencryptcomrijindaelprotect"; 
         public static string EncryptRijndael(string text)
         {
             if (string.IsNullOrEmpty(text))

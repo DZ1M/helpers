@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
-using System.Text;
 
 namespace Demos
 {
-   public static class DataHelper
+    public static class DataHelper
     {
         public static string DataPorExtenso(DateTime data)
         {
