@@ -14,9 +14,21 @@ namespace Demos
             texto = texto.Replace("{dia}", data.Day.ToString());
             texto = texto.Replace("{mes}", culture.TextInfo.ToTitleCase(dtInfo.GetMonthName(data.Month)).ToUpper());
             texto = texto.Replace("{ano}", data.Year.ToString());
-            texto = texto.Replace("{hora}", data.Date.ToString("HH:mm")); // Linha não testada ;)
+            texto = texto.Replace("{hora}", data.Date.ToString("HH:mm")); 
 
             return texto;
+        }
+
+        public static int Idade(this DateTime date)
+        {
+            int idade = 0;
+            idade = DateTime.Now.Year - date.Year;
+            if (DateTime.Now.DayOfYear < date.DayOfYear)
+            {
+                idade = idade - 1;
+            }
+
+            return idade;
         }
         public static DateTime ProximoDiaUtil(this DateTime data)
         {
