@@ -52,6 +52,17 @@ namespace Demos
         {
             Enviar(new List<DestinatarioEmail>() { new DestinatarioEmail() { Nome = nomeDestinatario, Email = emailDestinatario } }, assunto, texto);
         }
-
+        public static bool EmailValido(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
     }
 }
